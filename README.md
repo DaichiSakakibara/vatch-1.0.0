@@ -7,12 +7,11 @@
 | email              | string  | null: false |
 | encrypted_password | string  | null: false |
 | veg_id             | integer | null: false |
+| vatch_id           | integer | null: false |
 | sex_id             | integer | null: false |
 | blood_type_id      | integer | null: false |
 | prefecture_id      | integer | null: false |
-| birth_year_id      | integer | null: false |
-| birth_month_id     | integer | null: false |
-| birth_day_id       | integer | null: false |
+| birth_day          | date    | null: false |
 
 ### Association
 - has_one  :card
