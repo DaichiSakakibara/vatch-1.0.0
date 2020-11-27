@@ -65,7 +65,6 @@ html {
  * Remove default margin. */
 body {
   margin: 0;
-  position: absolute;
 }
 
 /* ==========================================================================
@@ -995,15 +994,22 @@ form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #57C3E9;
+  background-color: #303030;
   border-radius: 20px;
-  color: #fff;
+  color: #60ff60;
   border: 0;
   font-size: 18px;
+  max-width: 300px;
+  text-align: center;
+
+}
+
+div.actions{
+  text-align: center;
 }
 
 form input[type="submit"]:hover {
-  background-color: #84d3ef;
+  background-color: #606060;
 }
 
 .container {
@@ -1035,7 +1041,7 @@ form input[type="submit"]:hover {
   text-decoration: underline;
 }
 
-footer.footer {
+footer {
   justify-content: center;
   padding: 10px 20px;
   background-color: #303030;
@@ -1053,6 +1059,9 @@ footer.footer {
   margin-left: auto;
   margin-right: auto;
   max-width: 990px;
+}
+footer p {
+  text-align: center;
 }
 
 .search-form {
