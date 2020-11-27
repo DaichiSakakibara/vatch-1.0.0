@@ -16,7 +16,7 @@
         <h1 class="grid-6"><a href="/">Vatch</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
-          <span><%= current_user.nickname %>
+          <span><%= image_tag 'menu_green.png' %>
             <ul class="user__info">
               <li>
                 <%= link_to "マイページ", "/users/#{current_user.id}" %>
@@ -24,12 +24,17 @@
               </li>
             </ul>
           </span>
-          <%= link_to "投稿する", "/", class: "post" %>
         </div>
         <% else %>
-          <div class="grid-6">
-            <%= link_to "ログイン", new_user_session_path, class: "post" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          <div class="user_nav grid-6">
+          <span><%= image_tag 'menu_green.png' %>
+            <ul class="user__info">
+              <li>
+               <%= link_to "ログイン", new_user_session_path %>
+               <%= link_to "新規登録", new_user_registration_path %>
+              </li>
+            </ul>
+          </span>
           </div>
         <% end %>
       </div>

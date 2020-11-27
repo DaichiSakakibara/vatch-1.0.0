@@ -639,7 +639,7 @@ ul li {
   div.footer_icon {
     display: flex;
     justify-content: space-between; 
-    padding: 0px 20px;
+    padding: 0px 0px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -809,14 +809,14 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 header.header .user_nav {
   position: relative;
-  height: 100px;
+  height: 50px;
   right: 0;
 }
 
 header.header .user_nav span {
-  top: 5px;
+  top: -5px;
   display: block;
-  float: left;
+  float: right;
   margin-left: 30px;
   width: 150px;
   height: 50px;
@@ -826,9 +826,7 @@ header.header .user_nav span {
 }
 
 header.header .user_nav span:after {
-  content: '▼';
-  font-size: .7em;
-  margin-left: -4px;
+
 }
 
 header.header .user_nav span:hover ul {
@@ -847,7 +845,7 @@ header.header .user_nav ul {
 }
 
 header.header .user_nav ul li {
-  background-color: #f0f0f0;
+  background-color: #303030;
 }
 
 header.header .user_nav ul li a {
