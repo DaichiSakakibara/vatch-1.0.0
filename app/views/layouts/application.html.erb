@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pictweet</title>
+    <title>Vatch</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+  　<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header class="header">
+    <div class="heater_icon">
       <div class="header__bar row">
         <h1 class="grid-6"><a href="/">Vatch</a></h1>
         <% if user_signed_in? %>
@@ -31,10 +32,11 @@
             <%= link_to "新規登録", new_user_registration_path, class: "post" %>
           </div>
         <% end %>
+      </div>
     </header>
     <%= yield %>
         <footer class="footer">
-        <div class="icon">
+        <div class="footer_icon">
        <span><%= image_tag 'home_green.png' %></span>
        <span><%= image_tag 'search_green.png' %></span>
        <span><%= image_tag 'community_green.png' %></span>
