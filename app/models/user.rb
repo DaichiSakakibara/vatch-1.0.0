@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one_attached :image
 
+  mount_uploader :image, ImageUploader
+
   with_options presence: true do
     validates :nickname
     validates :birth_day 
