@@ -9,6 +9,11 @@
         <%= f.text_field :nickname, autofocus: true, maxlength: "12" %>
       </div>
 
+  <div class="circle-avatar">
+      <%= image_tag 'user_green.png' %>
+      <%= f.file_field :avatar %>
+  </div>
+
       <div class="field">
         <%= f.label "性別" %>
         <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box"}) %>
