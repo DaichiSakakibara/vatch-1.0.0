@@ -4,6 +4,7 @@
 | Column             | Type    | Options     |
 | ------------------ | ------  | ----------- |
 | nickname           | string  | null: false |
+| profile            | text    | null: false |
 | email              | string  | null: false |
 | encrypted_password | string  | null: false |
 | veg_id             | integer | null: false |
