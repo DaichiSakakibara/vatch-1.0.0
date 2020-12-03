@@ -639,12 +639,13 @@ ul li {
   div.footer_icon {
     display: flex;
     justify-content: space-between; 
-    padding: 0px 20px;
+    padding: 0px 0px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     max-width: 990px;
   }
+
   div.grid-6 a.post {
     padding: 4px 10px;
     font-size: 10px;
@@ -655,8 +656,47 @@ ul li {
     border-radius: 3px;
     display: inline-block;
   }
+
   div.header_icon{
     display: flex;
+  }
+
+  div.user-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+  div.circle-avatar  {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  div.circle-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  div.one-user  {
+    position: relative;
+    display: flex;
+    width: calc((100% - 50px) / 2);
+    margin-bottom: 40px;
+  }
+  
+  span.veg  {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    max-width: 50px;
   }
 
   }
@@ -671,6 +711,7 @@ html {
 
 body {
   padding-top: 60px;
+  
 }
 
 h1,
@@ -809,14 +850,14 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 header.header .user_nav {
   position: relative;
-  height: 100px;
+  height: 50px;
   right: 0;
 }
 
 header.header .user_nav span {
-  top: 5px;
+  top: -5px;
   display: block;
-  float: left;
+  float: right;
   margin-left: 30px;
   width: 150px;
   height: 50px;
@@ -826,9 +867,7 @@ header.header .user_nav span {
 }
 
 header.header .user_nav span:after {
-  content: '▼';
-  font-size: .7em;
-  margin-left: -4px;
+
 }
 
 header.header .user_nav span:hover ul {
@@ -847,7 +886,7 @@ header.header .user_nav ul {
 }
 
 header.header .user_nav ul li {
-  background-color: #f0f0f0;
+  background-color: #303030;
 }
 
 header.header .user_nav ul li a {
@@ -1112,3 +1151,51 @@ footer p {
 .search-form .search-btn {
   width: 10%;
 }
+
+.user-index {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+max-width: 990px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.one-user  {
+  position: relative;
+  display: flex;
+  width: calc((100% - 50px) / 3);
+  margin-bottom: 40px;
+}
+
+.vatch  {
+  z-index: 0;
+  height: 300px;
+  position:  absolute;                
+  top: 0;
+  left: 50px;
+}
+
+.circle-avatar  {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.veg  {
+  position:  absolute;                
+  top: 0;
+  left: 20px;
+}
+
+.circle-avatar img {
+  z-index: 2;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

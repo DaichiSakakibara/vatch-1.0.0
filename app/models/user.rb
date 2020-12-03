@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_one_attached :image
+  mount_uploader :avatar, AvatarUploader
+
   with_options presence: true do
     validates :nickname
     validates :birth_day 
@@ -16,5 +19,12 @@ class User < ApplicationRecord
     validates :blood_type_id
     validates :prefecture_id
   end
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :veg
+  belongs_to :vatch
+  belongs_to :sex
+  belongs_to :blood_type
+  belongs_to :prefecture
 
 end
