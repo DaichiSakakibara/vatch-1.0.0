@@ -1,20 +1,8 @@
 
 <div class="one-user">
+   <%# <span class="vatch"><%= image_tag 'gold.png' %></span> 
    <div class="circle-avatar">
       <%=image_tag  user.avatar.to_s %>
     </div>
-    <% case user.veg_id %>
-    <% when 2 %>
-    <span class="veg"><%= image_tag 'vegan.png' %></span>
-    <% when 3 %>
-    <span class="veg"><%= image_tag 'lacto.png' %></span>
-    <% when 4 %>
-    <span class="veg"><%= image_tag 'lacto_ovo.png' %></span>
-    <% when 5 %>
-    <span class="veg"><%= image_tag 'pesco.png' %></span>
-    <% when 6 %>
-    <span class="veg"><%= image_tag 'pollo.png' %></span>
-    <% when 7 %>
-    <span class="veg"><%= image_tag 'from_now_on.png' %></span>
-    <% end %>
+    <span class="veg"><%= veg_choice(user) %></span>
 </div>
