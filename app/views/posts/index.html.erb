@@ -1,0 +1,14 @@
+<div class="user-index">
+
+  <div class="contents row">
+    <% @posts.each do |post| %>
+      <%= render partial: "post", locals: { post: post } %>
+    <% end %>
+  </div>
+
+  <%= link_to(new_post_path, class: 'post-btn') do %>
+    <span><%= image_tag 'post.png', class: "post-btn-icon" %></span>
+  <% end %>
+
+</div>
+

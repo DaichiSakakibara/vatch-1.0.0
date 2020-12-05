@@ -42,8 +42,12 @@
     <%= yield %>
         <footer class="footer">
         <div class="footer_icon">
+      <%= link_to(posts_path) do %>
        <span><%= image_tag 'home_green.png' %></span>
+       <% end %>
+      <%= link_to(users_path) do %>
        <span><%= image_tag 'search_green.png' %></span>
+       <% end %>
        <span><%= image_tag 'community_green.png' %></span>
        <span><%= image_tag 'bell_green.png' %></span>
        <span><%= image_tag 'message_green.png' %></span>
