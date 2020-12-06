@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :image
   has_many :posts
+  has_many :like_posts, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 
   with_options presence: true do
@@ -27,5 +28,9 @@ class User < ApplicationRecord
   belongs_to :sex
   belongs_to :blood_type
   belongs_to :prefecture
+
+  def already_liked?(post)
+    self.like_posts.exists?(post_id: post.id)
+  end
 
 end

@@ -5,6 +5,16 @@
     </div>
   </div>
   <div class="post-right">
-      <p><%= post.text %></p>
+    <p><%= post.text %></p>
+      <% if current_user.already_liked?(post) %>
+        <%= link_to post_like_posts_path(post), method: :delete do %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      <% else %>
+        <%= link_to post_like_posts_path(post), method: :post do %>
+          <i class="fas fa-heart"></i>
+        <% end %>
+      <% end %>
+    <%= post.like_posts.count %>
   </div>
 </div>
