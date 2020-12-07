@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :image
   has_many :posts
+  has_many :comments
   has_many :like_posts, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 

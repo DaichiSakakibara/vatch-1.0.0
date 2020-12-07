@@ -12,6 +12,12 @@ class PostsController < ApplicationController
     Post.create(post_create)
  end
 
+ def show
+  @post = Post.find(params[:id])
+  @comment = Comment.new
+  @comments = @post.comments.includes(:user)
+end
+
  private
  def post_create
   params.require(:post).permit(:text).merge(user_id: current_user.id)
