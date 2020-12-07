@@ -1,0 +1,20 @@
+   <div class="contents row">
+      <%= render partial: "post", locals: { post: @post } %>
+  </div>
+ 
+ <div class="contents row">
+  <div class="container">
+      <%= form_with(model: [@post, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+  </div>
+</div>
+ 
+ <div class="comments">
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+      <%= render partial: "comment", locals: { comment: comment } %>
+      <% end %>
+      <% end %>
+    </div>

@@ -1,0 +1,31 @@
+<div class="post">
+  <div class="post-left">
+    <div class="post-circle-avatar">
+      <%=image_tag  post.user.avatar.to_s %>
+    </div>
+  </div>
+  <div class="post-right">
+          <p><b><%= post.user.nickname %></b></p>
+    <p><%= post.text %></p>
+    <%= link_to post_path(post) do %>
+      <i class="far fa-comment"></i>
+    <% end %>
+    <%= post.comments.count %>
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(post) %>
+          <%= link_to post_like_posts_path(post), method: :delete do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to post_like_posts_path(post), method: :post do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to ""  do %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      <% end %>
+    <%= post.like_posts.count %>
+  </div>
+</div>
