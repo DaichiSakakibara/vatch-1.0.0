@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: vatch_1_0_0_production
-  username: vatch_1_0_0
-  password: <%= ENV['VATCH_1_0_0_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
