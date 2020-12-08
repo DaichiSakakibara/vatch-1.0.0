@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
     @user = User.find(params[:id])
     if @user.id == current_user.id
       @user.update(user_params)

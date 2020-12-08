@@ -1,5 +1,11 @@
 <%= form_with(model: @post, local: true) do |form| %>
   <%= form.text_area :text, placeholder: "text", cols: "200", rows: "10" %>
-  <%= form.text_field :image, placeholder: "Image Url" %>
+  <div class="form-input">
+
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= form.file_field :image, class: 'hidden' %>
+    </label>
+  </div>
   <%= form.submit "SEND" %>
 <% end %>

@@ -7,6 +7,9 @@
   <div class="post-right">
           <p><b><%= post.user.nickname %></b></p>
     <p><%= post.text %></p>
+      <% if post.image.present? %>
+        <%= image_tag post.image.to_s, class: 'message-image' %>
+      <% end %>
     <%= link_to post_path(post) do %>
       <i class="far fa-comment"></i>
     <% end %>
