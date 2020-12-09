@@ -1,4 +1,17 @@
   <div class="user-index">
+  <%= search_form_for @q, id: 'users-search-form' do |f| %>
+  <%= f.label :nickname, "Keyword" %>
+  <%= f.search_field :nickname_cont %>
+
+    <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, {}, include_blank: '指定なし' %>
+
+  <%= f.radio_button :sex_id_eq, 2 %>男性
+  <%= f.radio_button :sex_id_eq, 3 %>女性
+  <%= f.radio_button :sex_id_eq, 4 %>指定しない
+
+  <%= f.submit "購入"  %>
+
+<% end %>
   <% @users.each do |user| %>
     <%= render partial: "user", locals: { user: user } %>
   <% end %>
