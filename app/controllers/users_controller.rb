@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+  # before_action :user_search, only: [:index, :search]
 
   def index 
     @users = User.all 
-    @q = User.ransack(params[:q])
+    @q = User.ransack(params[:q])  # 検索オブジェクトを生成
     @users = @q.result(distinct: true)
   end
 
@@ -25,11 +26,20 @@ class UsersController < ApplicationController
     end
   end
 
+  # def search
+  #   users = @q.result(distinct: true)
+  #   render /users
+  #   # render json: { users: users }
+  # end
 
   private
 
   def user_params
     params.require(:user).permit(:nickname, :profile, :email, :veg_id, :vatch_id, :sex_id, :blood_type_id, :prefecture_id, :birth_day, :avater)
   end 
+
+  def user_search
+    @q = User.ransack(params[:q])  # 検索オブジェクトを生成
+  end
 
 end
