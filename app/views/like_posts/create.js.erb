@@ -1,1 +1,2 @@
-document.getElementById('posts-contents').innerHTML = '<%= escape_javascript(render @post) %>'
+<%# document.getElementById('posts-contents').innerHTML = '<%= escape_javascript(render @post) ' %>
+$('#post_<%= @post.id %>').html("<%= j(render @post) %>" );

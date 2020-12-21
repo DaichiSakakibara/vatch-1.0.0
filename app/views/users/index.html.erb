@@ -1,18 +1,23 @@
-  <div class="user-index">
-  <%= search_form_for @q, id: 'users-search-form' do |f| %>
+  <div class="search_form" >
+
+  <%= search_form_for @q, url: search_path, id: 'users-search-form', remote: true do |f| %>
   <%= f.label :nickname, "Keyword" %>
   <%= f.search_field :nickname_cont %>
+    <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, {}, include_blank: '指定なし'%>
+<%= f.check_box :sex_id_eq , {multiple: true, id: "male"}, checked_value = "2", false %><label for="male" class="label">男性 </label>
+<%= f.check_box :sex_id_eq , {multiple: true, id: "female"}, checked_value = "3", false %><label for="female" class="label">女性 </label>
 
-    <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, {}, include_blank: '指定なし' %>
+  <%# <%= f.radio_button :sex_id_eq, 3 %>
 
-  <%= f.radio_button :sex_id_eq, 2 %>男性
-  <%= f.radio_button :sex_id_eq, 3 %>女性
-  <%= f.radio_button :sex_id_eq, 4 %>指定しない
 
-  <%= f.submit "購入"  %>
+  <%= f.submit "送信"  %>
+
+
 
 <% end %>
+<div class="user-index" id="users-index">
   <% @users.each do |user| %>
     <%= render partial: "user", locals: { user: user } %>
   <% end %>
+</div>
 </div>

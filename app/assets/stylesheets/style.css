@@ -1091,6 +1091,32 @@ form input[type="submit"] {
 
 }
 
+form input[type=checkbox] {
+  display: none; checkboxを非表示にする
+  }
+
+
+input[type="checkbox"]:checked + label {
+background: #55ff55;/* マウス選択時の背景色を指定する */
+color: #ccffcc; /* マウス選択時のフォント色を指定する */
+}
+
+.label {
+  display: block; /* ブロックレベル要素化する */
+  float: left; /* 要素の左寄せ・回り込を指定する */
+  margin: 5px; /* ラベル外側の余白を指定する */
+  width: 100px; /* ラベルの横幅を指定する */
+  height: 45px; /* ラベルの高さを指定する */
+  text-align: center; /* テキストのセンタリングを指定する */
+  line-height: 45px; /* 行の高さを指定する */
+  padding-left: 5px; /* ラベル内左側の余白を指定する */
+  padding-right: 5px; /* ラベル内右側の余白を指定する */
+  cursor: pointer;
+  background: #ccffcc; /* マウスカーソルの形（リンクカーソル）を指定する */
+  color: #55ff55; /* フォントの色を指定 */
+  border-radius: 5px; /* 角丸を指定する */
+   }
+
 div.actions{
   text-align: center;
 }
@@ -1164,6 +1190,15 @@ footer p {
 .search-form .search-btn {
   width: 10%;
 }
+
+.search_form {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+  }
 
 .user-index {
 position: relative;

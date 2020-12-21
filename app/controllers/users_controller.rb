@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
-  # before_action :user_search, only: [:index, :search]
+  before_action :user_search, only: [:index, :search]
 
   def index 
     @users = User.all 
-    @q = User.ransack(params[:q])  # 検索オブジェクトを生成
-    @users = @q.result(distinct: true)
   end
 
   def show
@@ -26,11 +24,11 @@ class UsersController < ApplicationController
     end
   end
 
-  # def search
-  #   users = @q.result(distinct: true)
-  #   render /users
-  #   # render json: { users: users }
-  # end
+   def search
+     @users = @q.result(distinct: true)
+    #  render /users
+     # render json: { users: users }
+   end
 
   private
 
